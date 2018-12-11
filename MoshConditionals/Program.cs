@@ -1,8 +1,7 @@
 ﻿using System;
 
-// simple program takes user input
-// if that number is between 1 and 10 it writes to console "valid"
-// if the number is not between 1 and 10, program returns and writes to console "invalid"
+// simple program takes user input --> 2 integers
+// writes to console which number is bigger or writes that they are the same
 
 namespace MoshConditionals
 {
@@ -10,21 +9,30 @@ namespace MoshConditionals
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a number between 1 and 10 please.");
+            Console.WriteLine("Enter any number");
 
-            var userInput = Console.ReadLine();
+            var inputOne = Convert.ToInt32(Console.ReadLine());
 
-            var number = Convert.ToInt32(userInput);
+            Console.WriteLine("Enter a second number");
 
-            if (number >= 1 && number <= 10) 
+            var inputTwo = Convert.ToInt32(Console.ReadLine());
+
+            if (inputOne > inputTwo)
             {
-                Console.WriteLine("Valid");
+                Console.WriteLine(inputOne + " is the larger number");
+            }
+            else if (inputTwo > inputOne)
+            {
+                Console.WriteLine(inputTwo + " is the larger number");
+            }
+            else if (inputTwo == inputOne)
+            {
+                Console.WriteLine("{0} and {1} are the same number!", inputOne, inputTwo);
             }
             else
             {
-                Console.WriteLine("Invalid");
+                Console.WriteLine("Error");
             }
-
         }
     }
 }
